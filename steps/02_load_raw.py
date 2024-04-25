@@ -69,6 +69,8 @@ if __name__ == "__main__":
     # Create a local Snowpark session
     with Session.builder.getOrCreate() as session:
         print("Minha ses: ")
+        print(f"Current Database and schema: {session.get_fully_qualified_current_schema()}")
+        print(f"Current Warehouse: {session.get_current_warehouse()}")
         #print(session)
 #       load_all_raw_tables(session)
 #        validate_raw_tables(session)
